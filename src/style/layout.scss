@@ -1,0 +1,13 @@
+html,
+body {
+  background-color: yellowgreen;
+}
+
+.layout-content {
+  height: 300px;
+  background-color: aqua;
+  .h2 {
+    font-size: 30px;
+    color: #fff;
+  }
+}
