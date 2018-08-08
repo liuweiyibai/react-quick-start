@@ -1,9 +1,10 @@
 {
-  "app.css": "/static/css/app.994239c2.css",
-  "app.js": "/static/js/app.994239c2.js",
-  "app.css.map": "/static/css/app.994239c2.css.map",
-  "app.js.map": "/static/js/app.994239c2.js.map",
-  "vendor.js": "/static/js/1.5b060279.js",
-  "vendor.js.map": "/static/js/1.5b060279.js.map",
+  "app.js": "/static/js/app.65045d43.js",
+  "app.js.map": "/static/js/app.65045d43.js.map",
+  "vendor.js": "/static/js/1.4a6c15bc.js",
+  "vendor.js.map": "/static/js/1.4a6c15bc.js.map",
+  "styles.css": "/static/css/styles.6965c58a.css",
+  "styles.js": "/static/js/2.6965c58a.js",
+  "styles.js.map": "/static/js/2.6965c58a.js.map",
   "index.html": "/index.html"
 }

@@ -7,7 +7,10 @@ const ManifestPlugin = require('webpack-manifest-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+
+// 压缩优化css插件
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 const baseWebpackConfig = require('./webpack.base.conf');
 const utils = require('./utils');
@@ -35,18 +38,26 @@ module.exports = () => {
       chunkFilename: utils.assetsPath('js/[id].[chunkhash:8].js')
     },
     optimization: {
-      minimizer: [new UglifyJsPlugin({
-        cache: true,
-        parallel: true,
-        uglifyOptions: {
-          compress: {
-            warnings: false
-          }
-        },
-        sourceMap: config.build.productionSourceMap,
-        parallel: true
-      })],
+      minimizer: [
+        new UglifyJsPlugin({
+          cache: true,
+          parallel: true,
+          uglifyOptions: {
+            compress: {
+              warnings: false
+            }
+          },
+          sourceMap: config.build.productionSourceMap,
+          parallel: true
+        }),
+
+        // 压缩优化 css 的插件
+        new OptimizeCSSAssetsPlugin({})
+      ],
       runtimeChunk: false,
+      // runtimeChunk: {
+      //   name: 'manifest'
+      // },
       splitChunks: {
         cacheGroups: {
           commons: {
@@ -61,6 +72,13 @@ module.exports = () => {
             chunks: 'initial',
             name: 'vendor',
             priority: 10,
+            enforce: true
+          },
+          styles: {
+            // 合并所有的css到一个文件
+            name: 'styles',
+            test: /\.scss|css$/,
+            chunks: 'all',
             enforce: true
           }
         }
