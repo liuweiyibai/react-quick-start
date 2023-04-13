@@ -32,8 +32,6 @@
     "postcss-import": "^11.1.0",
     "postcss-loader": "^2.1.6",
     "postcss-url": "^7.3.2",
-    "react": "^16.4.1",
-    "react-dom": "^16.4.1",
     "rimraf": "^2.6.2",
     "sass-loader": "^7.0.3",
     "style-loader": "^0.21.0",
@@ -45,6 +43,10 @@
     "webpack-merge": "^4.1.3"
   },
   "dependencies": {
-    "history": "^4.7.2"
+    "antd": "^3.9.3",
+    "history": "^4.7.2",
+    "react-router-dom": "^4.3.1",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2"
   }
 }
